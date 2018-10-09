@@ -1,61 +1,76 @@
 package com.company;
 
+import com.question.Question;
+
 import java.io.*;
-import java.lang.reflect.Array;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.*;
 import java.util.*;
 
 public class Main {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
+        File file = ReadFile();
+        ArrayList<String> lines = FileToArray(file);
+        ArrayList<Question> questions = new ArrayList<Question>();
+        questions = LinesToQuestions(lines);
+        for (Question q: questions) {
+            System.out.println(q.getText() + " : " + q.getType());
+        }
+    }
+
+    public static File ReadFile(){
 //        Scanner reader = new Scanner(System.in);
 //        System.out.println("取り込むファイル名を入力してください。");
 //        String infile = reader.nextLine();
 //        reader.close();
+//
+//        return new File("file_input\\" + infile);
 
-        ArrayList<String> text;
-
-        text = ReadFile();
-
-//        text = Randomize(text);
+        return new File("file_input\\" + "original.txt");
 
 
     }
-
-    public static ArrayList<String> ReadFile(){
-        //read file in
+    public static ArrayList<String> FileToArray(File file){
+        ArrayList<String> lines = new ArrayList<String>();
         try {
-            File file = new File("file_input\\original.txt");
-//            InputStreamReader inputStreamReader = new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8);
-//            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-
             FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String str = bufferedReader.readLine();
 
-            ArrayList<String> lines = new ArrayList<String>();
-
-            while (str != null){
+            while (str != null) {
                 lines.add(str);
                 str = bufferedReader.readLine();
             }
-
-            System.out.println(lines);
-
         }catch (FileNotFoundException e){
-            System.out.println("ファイルが存在しません。");
-            return null;
+            e.getStackTrace();
         }catch (IOException e){
-            System.out.println(e.toString());
+            e.getStackTrace();
+        }
+        return lines;
+    }
+
+
+    public static ArrayList<String> Randomize(ArrayList<String> text){
+        for (String string: text) {
+
         }
         return null;
     }
 
-    public static List<String> Randomize(List<String> text){
-        System.out.println(text.size());
-        return null;
-    }
+    public static ArrayList<Question> LinesToQuestions(ArrayList<String> lines){
 
+        ArrayList<Question> questions = new ArrayList<Question>();
+
+        for(String string : lines){
+            String[] line = string.split("\\[|\\]");
+            try {
+                Question question = new Question(string, line[1]);
+                questions.add(question);
+
+            }catch (ArrayIndexOutOfBoundsException e){
+                System.out.println(e + ": 空白行を消して再度お試しください。");
+            }
+        }
+        return questions;
+    }
 
 }
