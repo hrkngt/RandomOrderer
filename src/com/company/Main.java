@@ -7,14 +7,19 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-    FileManager fileManager;
-    QuestionManager questionManager;
+
 
     private void run(){
+        QuestionManager questionManager;
 
         ArrayList<String> lines = new FileManager("original.txt").fileToArray();
         questionManager = new QuestionManager(lines);
         questionManager.shuffle();
+
+        for(Question q : questionManager.getAll()){
+            System.out.println(q.getText() + "     " + q.getAnswer() );
+        }
+
     }
 
 

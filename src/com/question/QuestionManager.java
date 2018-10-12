@@ -65,14 +65,9 @@ public class QuestionManager extends ArrayList {
                     temp = q.getAnswer();
                 }
             }
-
         }
 
-
-        for(Question q : newList){
-            System.out.println(q.getText() + "     " + q.getAnswer() );
-        }
-        System.out.println("==============================================");
+        questions = newList;
     }
 
 }
