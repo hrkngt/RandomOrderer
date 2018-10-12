@@ -7,18 +7,13 @@ import java.util.ArrayList;
 
 public class FileManager {
 
-    public static File readFile(){
-//        Scanner reader = new Scanner(System.in);
-//        System.out.println("取り込むファイル名を入力してください。");
-//        String infile = reader.nextLine();
-//        reader.close();
-//
-//        return new File("file_input\\" + infile);
+    private File file;
 
-        return new File("file_input\\" + "original.txt");
+    FileManager(String fileName){
+        this.file = new File("file_input\\" + fileName);
     }
 
-    public static ArrayList<String> fileToArray(File file){
+    public ArrayList<String> fileToArray(){
         ArrayList<String> lines = new ArrayList<String>();
         try {
             FileReader fileReader = new FileReader(file);

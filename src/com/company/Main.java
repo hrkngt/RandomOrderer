@@ -1,27 +1,20 @@
 package com.company;
 
-import com.question.Pronounciation;
 import com.question.Question;
+import com.question.QuestionManager;
 
 import java.io.*;
 import java.util.*;
 
 public class Main {
+    FileManager fileManager;
+    QuestionManager questionManager;
 
-//    File file;
-//    FileManager fileManager;
-//    QuestionConverter questionConverter;
+    private void run(){
 
-    public void run(){
-        File file = FileManager.readFile();
-        ArrayList<String> lines = FileManager.fileToArray(file);
-        ArrayList<Pronounciation> questions = QuestionConverter.textToPronounciation(lines);
-
-        questions = QuestionConverter.randomizePron(questions);
-
-        for (Pronounciation q: questions) {
-            System.out.println(q.getText() + " / " + q.getType());
-        }
+        ArrayList<String> lines = new FileManager("original.txt").fileToArray();
+        questionManager = new QuestionManager(lines);
+        questionManager.shuffle();
     }
 
 
