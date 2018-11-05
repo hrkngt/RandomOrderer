@@ -1,0 +1,46 @@
+career [care'er] 1
+kangaroo [kangaro'o] 1
+offer [o'ffer] 1
+occur [occu'r] 1
+obtain [obta'in]
+curtain [cu'rtain] 1
+parental [pare'ntal] 1
+fundamental [fundame'ntal] 1
+exist [exi'st] 1
+tourist [to'urist] 1
+atomic [ato'mic] 2
+necessity [nece'ssity] 2
+oppotunity [oppotu'nity] 2
+society [soci'ety] 2
+artificial [artifi'cial] 2
+individual [indivi'dual] 2
+religion [reli'gion] 2
+competition [competi'tion] 2
+expensive [expe'nsive] 2
+exclusive [exclu'sive] 2
+educate [e'ducate] 3
+refrigerator [refri'gerator] 3
+demonstrate [de'monstrate] 3
+sophisticated [sophi'sticated] 3
+congratulate [congra'tulate] 3
+delicate [delicate] 3
+elevator [e'levator] 3
+appropriate [appro'priate] 3
+infamous [i'nfamous] 3
+industrious [indu'strious] 3
+postcard [po'stcard] 4
+honeymoon [ho'neymoon] 4
+newspaper [ne'wspaper] 4
+summertime [su'mmertime] 4
+contrast(n) [co'ntrast] 4
+conflict(v) [confli'ct] 4
+progress(n) [pro'gress] 4
+record(v) [reco'rd] 4
+absent(v) [abse'nt] 4
+perfect(v) [perfe'ct] 4
+
+
+
+
+
+
